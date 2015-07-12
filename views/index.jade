@@ -5,7 +5,7 @@ block content
   div.entry.col-lg-3
     form.form-horizontal(name="location-form", method="post")
       // Form Name
-      div.panel.panel-info
+      div.panel.panel-primary
         +address_form("Start location", "Name of start location", "Address of start location", "", "")
         +address_form("End destination", "Name of end location", "Address of end location", "","")
         div.panel-body
@@ -14,7 +14,12 @@ block content
             .controls
               input#name.input-medium(type="text", name="name", placeholder="Name this route")
           button(type="submit").btn.btn-default Submit
-  div.map.col-lg-5
-  div.found.col-lg-4
+  div.map.col-lg-6
+  div.found.col-lg-3
+    div.panel.panel-primary
+      div.panel-heading
+        h3.panel-title= "Whats on my route?"
+      div.panel-body
+
 
 
