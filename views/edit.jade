@@ -1,0 +1,6 @@
+extends layout
+
+block content
+  form.form-horizontal(name="location-form", method="post")
+    +address_form("Edit address", "Location name", "Location address", ""+name, ""+address)
+    button(type="submit").btn.btn-default Save

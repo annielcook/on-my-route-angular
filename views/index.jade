@@ -1,5 +1,20 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+
+  div.entry.col-lg-3
+    form.form-horizontal(name="location-form", method="post")
+      // Form Name
+      div.panel.panel-info
+        +address_form("Start location", "Name of start location", "Address of start location", "", "")
+        +address_form("End destination", "Name of end location", "Address of end location", "","")
+        div.panel-body
+          .control-group
+            label.control-label(for="name") Route name
+            .controls
+              input#name.input-medium(type="text", name="name", placeholder="Name this route")
+          button(type="submit").btn.btn-default Submit
+  div.map.col-lg-5
+  div.found.col-lg-4
+
+
