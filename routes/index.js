@@ -9,7 +9,17 @@ router.get('/', function(req, res, next) {
   });
 });
 
-
+router.get('/all', function(req, res, next) {
+  console.log("here")
+  models.Address.find({}, function(err, arr) {
+    console.log("arr", arr)
+    if (err) return next();
+    if (!arr) return res.status(404).send()
+    res.render('all', {
+      addressArr: arr
+    });
+  })
+})
 
 router.post('/', function(req, res, next) {
   var start, end
@@ -79,11 +89,8 @@ router.post('/:name/edit', function(req, res, next) {
     name: req.params.name
   }, function(err, address) {
     if (!address) return next()
-
-
-
-    //I'm overwriting properites on address that exist in req.body
-    //namely title and body
+      //I'm overwriting properites on address that exist in req.body
+      //namely title and body
     for (var key in req.body) {
       address[key] = req.body[key]
     }
@@ -95,9 +102,8 @@ router.post('/:name/edit', function(req, res, next) {
       res.redirect('/')
     })
   });
-})
+});
 
-//one address or trip page should have an edit button
 
 
 //should be a way to see all of the addresses and all of the trips

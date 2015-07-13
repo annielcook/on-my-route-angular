@@ -1,17 +1,16 @@
 body {
   margin-top: 50px;
   background-color: #F0F0F0;
-  display: table;
   width: 100%; }
 
 .entry {
   padding-top: 15px;
   height: 100%;
-  display: table-cell;
-  float: none;
   margin-left: 0; }
 
 .found {
-  height: 100%;
-  display: table-cell;
-  float: none; }
+  height: 100%; }
+
+#map-canvas {
+  height: 100vh;
+  width: 100%; }

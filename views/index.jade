@@ -2,20 +2,26 @@ extends layout
 
 block content
 
-  div.entry.col-lg-3
+  div.entry.col-sm-3
     form.form-horizontal(name="location-form", method="post")
-      // Form Name
       div.panel.panel-primary
-        +address_form("Start location", "Name of start location", "Address of start location", "", "")
-        +address_form("End destination", "Name of end location", "Address of end location", "","")
+        div.panel-heading
+          h3.panel-title= "I am searching for..."
+        div.panel-body
+          .control-group
+            .controls
+              input.input-medium(type="text", name="search", value="")
+        +address_form("Start location", "Name", "Address", "", "")
+        +address_form("End destination", "Name", "Address", "","")
         div.panel-body
           .control-group
             label.control-label(for="name") Route name
             .controls
               input#name.input-medium(type="text", name="name", placeholder="Name this route")
           button(type="submit").btn.btn-default Submit
-  div.map.col-lg-6
-  div.found.col-lg-3
+  div.map-container.col-sm-6
+    div#map-canvas
+  div.found.col-sm-3
     div.panel.panel-primary
       div.panel-heading
         h3.panel-title= "Whats on my route?"

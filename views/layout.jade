@@ -7,5 +7,13 @@ html
     link(rel='stylesheet', href='/stylesheets/style.css')
     include ./mixins.jade
   body
+
     +nav("On My Route", "dropdown_menu", "inverse")
+      +nav_item("/all")= "ALL"
     block content
+
+    script(src="javascripts/jquery.js")
+    script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8Mev1oPwG0dZHqNexMUYWiuY6aec7bA&sensor=true")
+    script(src="javascripts/maps.js")
+
+

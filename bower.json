@@ -1,0 +1,20 @@
+{
+  "name": "on-my-route-angular",
+  "version": "0.0.0",
+  "homepage": "https://github.com/annielcook/on-my-route-angular",
+  "authors": [
+    "Annie Cook <anniecook@ostby.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.2",
+    "jquery": "~2.1.4"
+  }
+}

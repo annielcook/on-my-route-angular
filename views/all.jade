@@ -1,0 +1,7 @@
+extends layout
+
+block content
+  h1= "All Addresses"
+  for address in addressArr
+    ul
+      a(href=address.name+"").li= address.name
