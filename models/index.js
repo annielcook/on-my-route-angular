@@ -19,7 +19,8 @@ var tripSchema = new mongoose.Schema({
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Address'
   },
-  route_name: String
+  route_name: String,
+  mode: String
 })
 
 

@@ -6,14 +6,17 @@ html
     link(rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
     include ./mixins.jade
-  body
+  body(ng-app="MainApp")
 
     +nav("On My Route", "dropdown_menu", "inverse")
       +nav_item("/all")= "ALL"
     block content
 
     script(src="javascripts/jquery.js")
+    script(src="javascripts/angular.js")
     script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDF8Mev1oPwG0dZHqNexMUYWiuY6aec7bA&sensor=true")
     script(src="javascripts/maps.js")
+    script(src="javascripts/app.js")
+
 
 

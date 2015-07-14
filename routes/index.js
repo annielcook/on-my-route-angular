@@ -41,11 +41,12 @@ router.post('/', function(req, res, next) {
       return models.Trip.create({
         start: start._id,
         end: end._id,
-        route_name: req.body.name[2]
+        route_name: req.body.name[2],
+        mode: req.body.mode
       })
     })
     .then(function(trip) {
-      res.send(trip)
+      //res.send(trip)
     })
     .then(null, next);
 });

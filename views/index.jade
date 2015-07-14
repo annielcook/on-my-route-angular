@@ -11,21 +11,61 @@ block content
           .control-group
             .controls
               input.input-medium(type="text", name="search", value="")
-        +address_form("Start location", "Name", "Address", "", "")
-        +address_form("End destination", "Name", "Address", "","")
+
+        div.panel-heading
+          h3.panel-title= "Start location"
+
+        div.panel-body
+          // Text input
+          .control-group
+            label.control-label(for="name")= "Name"
+            .controls
+              input#name.input-medium(type="text", name="name", value="")
+          // Text input
+          .control-group
+            label.control-label(for="address")= "Address"
+            .controls
+              input#start.input-medium(type="text", name="address", value="")
+
+        div.panel-heading
+          h3.panel-title= "End location"
+
+        div.panel-body
+          // Text input
+          .control-group
+            label.control-label(for="name")= "Name"
+            .controls
+              input#name.input-medium(type="text", name="name", value="")
+          // Text input
+          .control-group
+            label.control-label(for="address")= "Address"
+            .controls
+              input#end.input-medium(type="text", name="address", value="")
+        div.panel-heading
+          h3.panel-title= "Mode of Transportation"
         div.panel-body
           .control-group
-            label.control-label(for="name") Route name
+            .controls
+              select(id="mode",name="mode").form-control
+                option(value="WALKING") Walking
+                option(value="DRIVING") Driving
+                option(value="TRANSIT") Transit
+                option(value="BICYCLING") Bicycling
+        div.panel-heading
+          h3.panel-title= "Route name"
+        div.panel-body
+          .control-group
             .controls
               input#name.input-medium(type="text", name="name", placeholder="Name this route")
-          button(type="submit").btn.btn-default Submit
-  div.map-container.col-sm-6
+          button(onclick="calcRoute()", type="submit").btn.btn-default Submit
+  div.col-sm-6
     div#map-canvas
   div.found.col-sm-3
     div.panel.panel-primary
       div.panel-heading
-        h3.panel-title= "Whats on my route?"
+        h3.panel-title= "Directions"
       div.panel-body
+        div#directionsPanel
 
 
 
